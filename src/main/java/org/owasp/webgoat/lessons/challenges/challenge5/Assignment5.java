@@ -68,7 +68,17 @@ public class Assignment5 extends AssignmentEndpoint {
       }
     }
     finally {
-      statement.close();
+      if (resultSet != null){
+        resultSet.close();
+      }
+      
+      if(statement != null){
+        statement.close();
+      }
+
+      if (connection != null){
+        connection.close();
+      }
     }
   }
 }
